@@ -6,7 +6,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 directory="/usr/share/ihaahi"
 if [ -d "$directory" ]; then
-    #nothing
+    echo
 else
     mkdir /usr/share/ihaahi
 fi
@@ -21,4 +21,4 @@ chmod +x /usr/local/bin/acon
 apt install nftables
 
 echo acon install successfully
-echo Type acon in target directory that you want to access via .onion link
+
