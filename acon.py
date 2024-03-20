@@ -31,7 +31,7 @@ def default_rules(filename):
         W_FILE.write(line)
     W_FILE.close()
 
-def allow_all_incomming_connection(filename):
+def allow_all_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=True
@@ -52,7 +52,7 @@ def allow_all_incomming_connection(filename):
     W_FILE.close()
     service_handle()
 
-def allow_incomming_port_connection(filename, port_list):
+def allow_incoming_port_connection(filename, port_list):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=True
@@ -76,7 +76,7 @@ def allow_incomming_port_connection(filename, port_list):
             i=i+1
     W_FILE.close()
 
-def block_incomming_port_connection(filename, port_list):
+def block_incoming_port_connection(filename, port_list):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=True
@@ -121,7 +121,7 @@ def allow_all_outgoing_connection(filename):
     W_FILE.close()
     service_handle()
 
-def view_all_allowd_incomming_connection(filename):
+def view_all_allowd_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -137,12 +137,12 @@ def view_all_allowd_incomming_connection(filename):
                 line = line.replace("ip saddr {", "")
                 line = line.replace("} accept", "")
                 line = line.replace("\t", "")
-                print("allowed incomming connection ::: {}".format(line))         
+                print("allowed incoming connection ::: {}".format(line))         
         if i==2:
             Flag=True
             i=i+1
 
-def view_all_allowd_port_incomming_connection(filename):
+def view_all_allowd_port_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -158,12 +158,12 @@ def view_all_allowd_port_incomming_connection(filename):
                 line = line.replace("tcp dport {", "")
                 line = line.replace("} accept", "")
                 line = line.replace("\t", "")
-                print("allowed incomming connection ::: {}".format(line))         
+                print("allowed incoming connection ::: {}".format(line))         
         if i==2:
             Flag=True
             i=i+1
         
-def block_all_incomming_connection(filename):
+def block_all_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=True
@@ -207,7 +207,7 @@ def block_all_outgoing_connection(filename):
     W_FILE.close()
     service_handle()
 
-def view_all_blocked_incomming_connection(filename):
+def view_all_blocked_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -223,12 +223,12 @@ def view_all_blocked_incomming_connection(filename):
                 line = line.replace("ip saddr {", "")
                 line = line.replace("} drop", "")
                 line = line.replace("\t", "")
-                print("blocked incomming connection ::: {}".format(line))         
+                print("blocked incoming connection ::: {}".format(line))         
         if i==2:
             Flag=True
             i=i+1
 
-def view_all_blocked_port_incomming_connection(filename):
+def view_all_blocked_port_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -244,7 +244,7 @@ def view_all_blocked_port_incomming_connection(filename):
                 line = line.replace("tcp dport {", "")
                 line = line.replace("} drop", "")
                 line = line.replace("\t", "")
-                print("blocked incomming connection ::: {}".format(line))         
+                print("blocked incoming connection ::: {}".format(line))         
         if i==2:
             Flag=True
             i=i+1
@@ -389,7 +389,7 @@ def add_blocked_incoming_connection(filename, ip_list):
     W_FILE.close()
     service_handle()
 
-def remove_ip_from_allowd_incomming_connection(filename):
+def remove_ip_from_allowd_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -407,7 +407,7 @@ def remove_ip_from_allowd_incomming_connection(filename):
                 line1 = line1.replace("} accept", "")
                 line1 = line1.replace("\t", "")
                 line1 = line1.replace("\n", "")
-                print("allowed incomming connection ::: {}".format(line1))  
+                print("allowed incoming connection ::: {}".format(line1))  
                 print("you can enter multiple ip's seprate by space")
                 input_ip = input("Enter ip that you want to remove : ") 
                 input_ip = input_ip.split(" ")
@@ -421,7 +421,7 @@ def remove_ip_from_allowd_incomming_connection(filename):
         W_FILE.write(line)
         service_handle()
         
-def remove_ip_from_blocked_incomming_connection(filename):
+def remove_ip_from_blocked_incoming_connection(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     Flag=False
@@ -439,7 +439,7 @@ def remove_ip_from_blocked_incomming_connection(filename):
                 line1 = line1.replace("} drop", "")
                 line1 = line1.replace("\t", "")
                 line1 = line1.replace("\n", "")
-                print("blocked incomming connection ::: {}".format(line1))  
+                print("blocked incoming connection ::: {}".format(line1))  
                 print("you can enter multiple ip's seprate by space")
                 input_ip = input("Enter ip that you want to remove : ") 
                 input_ip = input_ip.split(" ")
@@ -485,7 +485,7 @@ def remove_ip_from_allowd_outgoing_connection(filename):
         W_FILE.write(line)
         service_handle()
 
-def remove_allowed_incomming_port(filename):
+def remove_allowed_incoming_port(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     
@@ -497,7 +497,7 @@ def remove_allowed_incomming_port(filename):
     W_FILE.close()
     service_handle()
 
-def remove_allowed_incomming_port(filename):
+def remove_allowed_incoming_port(filename):
     with open(filename, 'r') as R_FILE:
         CONTENT = R_FILE.readlines()
     
@@ -527,7 +527,7 @@ def remove_ip_from_blocked_outgoing_connection(filename):
                 line1 = line1.replace("} drop", "")
                 line1 = line1.replace("\t", "")
                 line1 = line1.replace("\n", "")
-                print("blocked incomming connection ::: {}".format(line1))  
+                print("blocked incoming connection ::: {}".format(line1))  
                 print("you can enter multiple ip's seprate by space")
                 input_ip = input("Enter ip that you want to remove : ") 
                 input_ip = input_ip.split(" ")
@@ -657,14 +657,14 @@ def help():
     print("Usage: acon <flag> <filter>")
     print("\tabout                     about tool devloper")
     print("\t-h                        for help")
-    print("\t-a in                     allow all incomming connection")
-    print("\t-b in                     block all incomming connection")
-    print("\t-a in <ip1> <ip2> ...     allow specific ip's for incomming connection")
-    print("\t-b in <ip1> <ip2> ...     block specific ip's for incomming connection")
-    print("\t-a removein               remove ip from allow incomming ip list")
-    print("\t-b removein               remove ip from block incomming ip list")
-    print("\t-a viewin                 view all allowed incomming connection ip")
-    print("\t-b viewin                 view all blocked incomming connection ip")
+    print("\t-a in                     allow all incoming connection")
+    print("\t-b in                     block all incoming connection")
+    print("\t-a in <ip1> <ip2> ...     allow specific ip's for incoming connection")
+    print("\t-b in <ip1> <ip2> ...     block specific ip's for incoming connection")
+    print("\t-a removein               remove ip from allow incoming ip list")
+    print("\t-b removein               remove ip from block incoming ip list")
+    print("\t-a viewin                 view all allowed incoming connection ip")
+    print("\t-b viewin                 view all blocked incoming connection ip")
     print("\t-a out                    allow all outgoing connection")
     print("\t-b out                    block all outgoing connection")
     print("\t-a out <ip1> <ip2> ...    allow specific ip's for outgoing connection")
@@ -698,8 +698,8 @@ def Main():
             print("Please check help")
         elif sys.argv[2] == "in":
             if len(sys.argv) == 3:
-                allow_all_incomming_connection(filename)
-                print("All incomming connection allowed")
+                allow_all_incoming_connection(filename)
+                print("All incoming connection allowed")
             else:
                 ip_list=[]
                 for i in range(3, len(sys.argv)):
@@ -711,7 +711,7 @@ def Main():
                         sys.exit()
                 add_allowd_incoming_connection(filename, ip_list)
         elif sys.argv[2] == "removein":
-            remove_ip_from_allowd_incomming_connection(filename)
+            remove_ip_from_allowd_incoming_connection(filename)
         elif sys.argv[2] == "removeout":
             remove_ip_from_allowd_outgoing_connection(filename)
         elif sys.argv[2] == "out":
@@ -729,7 +729,7 @@ def Main():
                         sys.exit()
                     add_allowd_outgoing_connection(filename, ip_list)
         elif sys.argv[2] == "viewin":
-            view_all_allowd_incomming_connection(filename)
+            view_all_allowd_incoming_connection(filename)
         elif sys.argv[2] == "viewout":
             view_all_allowd_outgoing_connection(filename)
             
@@ -740,8 +740,8 @@ def Main():
             print("Please check help")
         elif sys.argv[2] == "in":
             if len(sys.argv) == 3:
-                block_all_incomming_connection(filename)
-                print("All incomming connection blocked")
+                block_all_incoming_connection(filename)
+                print("All incoming connection blocked")
             else:
                 ip_list=[]
                 for i in range(3, len(sys.argv)):
@@ -753,7 +753,7 @@ def Main():
                         sys.exit()
                 add_blocked_incoming_connection(filename, ip_list)
         elif sys.argv[2] == "removein":
-            remove_ip_from_blocked_incomming_connection(filename)
+            remove_ip_from_blocked_incoming_connection(filename)
         elif sys.argv[2] == "removeout":
             remove_ip_from_allowd_outgoing_connection(filename)
         elif sys.argv[2] == "out":
@@ -761,7 +761,7 @@ def Main():
                 block_all_outgoing_connection(filename)
                 print("All outgoing connection blocked")
         elif sys.argv[2] == "viewin":
-            view_all_blocked_incomming_connection(filename)
+            view_all_blocked_incoming_connection(filename)
         elif sys.argv[2] == "viewout":
             view_all_blocked_outgoing_connection(filename)
     elif sys.argv[1] == "-p":
@@ -769,27 +769,27 @@ def Main():
         if len(sys.argv) == 2:
             print("Please check help")
         elif sys.argv[2] == "remove":
-            remove_allowed_incomming_port(filename)
+            remove_allowed_incoming_port(filename)
         elif sys.argv[2] == "view":
-            view_all_allowd_port_incomming_connection(filename)
+            view_all_allowd_port_incoming_connection(filename)
         else:
             port_list=[]
             for i in range(2, len(sys.argv)):
                 port_list.append(sys.argv[i])
-            allow_incomming_port_connection(filename, port_list)
+            allow_incoming_port_connection(filename, port_list)
     elif sys.argv[1] == "-q":
         default_rules(filename)
         if len(sys.argv) == 2:
             print("Please check help")
         elif sys.argv[2] == "remove":
-            remove_blocked_incomming_port(filename)
+            remove_blocked_incoming_port(filename)
         elif sys.argv[2] == "view":
-            view_all_allowd_port_incomming_connection(filename)
+            view_all_allowd_port_incoming_connection(filename)
         else:
             port_list=[]
             for i in range(2, len(sys.argv)):
                 port_list.append(sys.argv[i])
-            block_incomming_port_connection(filename, port_list)
+            block_incoming_port_connection(filename, port_list)
 
 if __name__ == "__main__":
     Main()
